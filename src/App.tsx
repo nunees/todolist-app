@@ -1,7 +1,22 @@
+import { Header } from './components/Header';
+import { Input } from './components/Input';
+import { Counter } from './components/Counter';
+import styles from './App.module.css';
+import './global.css';
+import { DeviceTabletCamera } from 'phosphor-react';
+import { Todos } from './components/todos';
+
 export function App() {
 
   return (
-    <h1>Hello world</h1>
+    <div>
+      <Header />
+        <div className={styles.wrapper}>
+          <Input />
+          <Counter />
+          <Todos />
+        </div>
+      </div>
   )
 }
 

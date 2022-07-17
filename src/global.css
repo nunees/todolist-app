@@ -1,4 +1,5 @@
 :root{
+    --white: #FFFFFF;
      --gray-700: #0D0D0D;
      --gray-600: #1A1A1A;
      --gray-500: #262626;
@@ -12,5 +13,21 @@
      --purple-dark: #5E60CE;
      --blue: #4EA8DE;
      --blue-dark: #1E6F9F;
+}
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: var(--gray-600);
+    color: var(--gray-300);
+}
+
+body, input, textarea, button{
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
 }
