@@ -4,7 +4,7 @@ import { Counter } from './components/Counter';
 import styles from './App.module.css';
 import './global.css';
 import { DeviceTabletCamera } from 'phosphor-react';
-import { Todos } from './components/todos';
+import { Todos } from './components/Todos';
 
 export function App() {
 
