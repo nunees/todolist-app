@@ -1,0 +1,55 @@
+.todo{
+    display: flex;
+    gap: 1rem;
+    flex: 1;
+    height: 72px;
+    border-radius: 8px;
+    background: var(--gray-500);
+    font-size: 0.875rem;
+    margin-bottom: 12px;
+    padding: 16px 52px;
+}
+
+.todo input[type="checkbox"] {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.checkbox{
+    display: inline-block;
+    height: 17px;
+    width: 17px;
+    background: transparent;
+    border: 2px solid var(--blue);
+    border-radius: 100%;
+    margin-right: 4px;
+    cursor: pointer;
+}
+
+.checkboxActive{
+    display: inline-block;
+    height: 17px;
+    width: 17px;
+    border: 2px solid var(--purple);
+    border-radius: 100%;
+    margin-right: 4px;
+    cursor: pointer;
+    background: var(--purple);
+}
+
+.checkbox svg{
+    width: 7px;
+    height: 4px;
+}
+
+.todo svg{
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+}
+

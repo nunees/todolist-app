@@ -1,0 +1,39 @@
+.add{
+    display: flex;
+    justify-content: center;
+    width: 736px;
+    height: 54px; 
+    margin-top: -27px;
+}
+
+.add input{
+    width: 638px;
+    height: 3.37rem;
+    border: 1px solid var(--gray-700);
+    border-radius: 8px;
+    background: var(--gray-500);
+    padding: 1rem;
+    color: var(--gray-300);
+    outline: none;
+}
+
+.add button[type="submit"]{
+    width: 5.6rem;
+    margin-left: 8px;
+    background-color: var(--blue-dark);
+    border: 1px solid var(--blue-dark);
+    border-radius: 8px;
+    color: var(--gray-100);
+    font-weight: 700;
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+.add button[type="submit"]:hover{
+    background-color: var(--blue);
+    transition: 0.7s;
+}
+
+.add button[type="submit"] svg{
+    padding-top: 5px
+}
