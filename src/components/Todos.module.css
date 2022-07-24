@@ -1,4 +1,4 @@
-.todoForm{
+form{
     display: flex;
     justify-content: center;
     width: 736px;
@@ -6,7 +6,7 @@
     margin-top: -27px;
 }
 
-.todoForm input{
+form input{
     width: 638px;
     height: 3.37rem;
     border: 1px solid var(--gray-700);
@@ -17,7 +17,7 @@
     outline: none;
 }
 
-.todoForm button[type="submit"]{
+form button[type="submit"]{
     width: 5.6rem;
     margin-left: 8px;
     background-color: var(--blue-dark);
@@ -27,15 +27,20 @@
     font-weight: 700;
     font-size: 0.875rem;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.todoForm button[type="submit"]:hover{
+form button[type="submit"]:hover{
     background-color: var(--blue);
     transition: 0.7s;
 }
 
-.todoForm button[type="submit"] svg{
-    padding-top: 5px
+form button[type="submit"] svg{
+    width: 15px;
+    height: 15px;
+    margin-left: 8px;
 }
 
 .counter{
@@ -51,7 +56,7 @@
 .counter p{
     display: inline-block;
     font-weight: 700;
-    color: var(--purple);
+    color: var(--blue);
 }
 
 .counter span{
@@ -63,9 +68,9 @@
 }
 
 .counterNumber{
-    width: 25px;
+    width: 52px;
     height: 19px;
-    border-radius: 100%;
+    border-radius: 8px;
     margin-left: 8px;
 }
 

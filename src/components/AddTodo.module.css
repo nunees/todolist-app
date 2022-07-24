@@ -31,13 +31,7 @@
     cursor: pointer;
 }
 
-.todo p{
-    display: inline-block;
-    flex-grow: 1;
-    width: 632px;
-    height: 40px;
-    color: var(--gray-100);
-}
+
 
 .checkboxActive{
     display: inline-block;
@@ -50,9 +44,7 @@
     background: var(--purple);
 }
 
-.textDone{
-    text-decoration: line-through;
-}
+
 
 .checkbox svg{
     width: 7px;
@@ -69,10 +61,31 @@
 }
 
 .todo button svg{
-    color: var(--white);
+    color: var(--gray-300);
     cursor: pointer;
     display: inline-block;
-    width: 24px;
-    height: 24px;
+    width: 12px;
+    height: 14px;
 }
 
+.todo button:hover{
+    border-radius: 4px;
+    background: var(--gray-400);
+}
+
+.todo button svg:hover{
+    color: var(--danger);
+}
+
+.textDone,.textTodo{
+    flex-grow: 1;
+}
+
+.textTodo{
+    color: var(--gray-100);
+}
+
+.textDone{
+    color: var(--gray-300);
+    text-decoration: line-through;
+}

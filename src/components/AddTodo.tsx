@@ -15,6 +15,7 @@ interface ITodoProps{
 }
 
 export function AddTodo({todo, onDeleteTodo, onToggleDone}:ITodoProps){
+    const [isChecked, setIsChecked] = useState(false);
 
     function handleDeleteTodo(){
       onDeleteTodo(todo.id);
@@ -22,25 +23,24 @@ export function AddTodo({todo, onDeleteTodo, onToggleDone}:ITodoProps){
 
     function handleToggleDone(){
       onToggleDone(todo.id);
+      setIsChecked(!isChecked);
     }
 
-    const [isChecked, setIsChecked] = useState(true);
-    console.log(todo);
+    
+    console.log(isChecked);
     return(
         <div className={styles.todo} >
-          <input 
-            type="checkbox"  
-            onChange={() => setIsChecked(!isChecked)}/>
+          <input type="checkbox" />
 
           <span 
-            className={isChecked ? styles.checkbox : styles.checkboxActive}
+            className={!isChecked ? styles.checkbox : styles.checkboxActive}
             onClick={handleToggleDone}
             > 
           </span>
 
           <p 
             key={todo.id} 
-            className={""}>
+            className={isChecked ? styles.textDone : styles.textTodo}>
             {todo.content}
           </p>
           <button 
