@@ -77,7 +77,7 @@ export function Todos() {
           </span>
         </p>
         <p>
-          Concluidas
+          Concluídas
           <span
             className={styles.counterNumber}
           >{`${todosDone} de ${todos.length}`}</span>
@@ -87,7 +87,7 @@ export function Todos() {
       {todos.length === 0 && (
         <div className={styles.noTodos}>
           <ClipboardText />
-          <strong>Voce ainda nao tem tarefas cadastradas</strong>
+          <strong>Voce ainda não tem tarefas cadastradas</strong>
           <p>Crie tarefas e organize seus items a fazer</p>
         </div>
       )}
