@@ -3,30 +3,51 @@ import { useState } from 'react';
 import styles from './AddTodo.module.css';
 
 interface ITodo{
+  id: string;
   content: string;
-  id: number;
-  onDeleteTodo: (todo: string) =>  void;
+  done: boolean;
 }
 
-export function AddTodo({content, id, onDeleteTodo}:ITodo){
+interface ITodoProps{
+  todo: ITodo;
+  onDeleteTodo: (id: string) =>  void;
+  onToggleDone: (id: string) =>  void;
+}
+
+export function AddTodo({todo, onDeleteTodo, onToggleDone}:ITodoProps){
 
     function handleDeleteTodo(){
-      onDeleteTodo(content);
+      onDeleteTodo(todo.id);
+    }
+
+    function handleToggleDone(){
+      onToggleDone(todo.id);
+      console.log("toogle")
     }
 
     const [isChecked, setIsChecked] = useState(true);
+    console.log(todo);
     return(
         <div className={styles.todo} >
-        <input type="checkbox"  onChange={() => setIsChecked(!isChecked)}/>
-        <span className={isChecked ? styles.checkbox : styles.checkboxActive}> 
-        </span>
-        <p key={id}>
-          {content}
-        </p>
-        <button onClick={handleDeleteTodo} title="Deletar tarefa">
-          <Trash />
-        </button>
-        
-    </div> 
+          <input 
+            type="checkbox"  
+            onChange={() => setIsChecked(!isChecked)}/>
+
+          <span 
+            className={isChecked ? styles.checkbox : styles.checkboxActive}
+            > 
+          </span>
+
+          <p 
+            key={todo.id} 
+            className={""}>
+            {todo.content}
+          </p>
+          <button 
+            onClick={handleDeleteTodo} 
+            title="Deletar tarefa">
+              <Trash />
+          </button>
+        </div> 
     );
 }
