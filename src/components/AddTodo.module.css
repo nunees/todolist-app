@@ -45,10 +45,10 @@
 }
 
 
-
-.checkbox svg{
-    width: 7px;
-    height: 4px;
+span svg{
+    width: 15px;
+    height: 15px;
+    color: var(--white);
 }
 
 

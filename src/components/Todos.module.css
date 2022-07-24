@@ -17,6 +17,10 @@ form input{
     outline: none;
 }
 
+form input:focus{
+    color: var(--gray-100);
+}
+
 form button[type="submit"]{
     width: 5.6rem;
     margin-left: 8px;

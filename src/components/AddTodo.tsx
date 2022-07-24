@@ -35,7 +35,8 @@ export function AddTodo({todo, onDeleteTodo, onToggleDone}:ITodoProps){
           <span 
             className={!isChecked ? styles.checkbox : styles.checkboxActive}
             onClick={handleToggleDone}
-            > 
+            >
+            {isChecked && <Check />}
           </span>
 
           <p 
