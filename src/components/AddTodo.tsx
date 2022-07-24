@@ -22,7 +22,6 @@ export function AddTodo({todo, onDeleteTodo, onToggleDone}:ITodoProps){
 
     function handleToggleDone(){
       onToggleDone(todo.id);
-      console.log("toogle")
     }
 
     const [isChecked, setIsChecked] = useState(true);
@@ -35,6 +34,7 @@ export function AddTodo({todo, onDeleteTodo, onToggleDone}:ITodoProps){
 
           <span 
             className={isChecked ? styles.checkbox : styles.checkboxActive}
+            onClick={handleToggleDone}
             > 
           </span>
 

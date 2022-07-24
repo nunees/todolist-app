@@ -11,7 +11,7 @@ interface ITodo{
 }
 
 export function Todos() {
-  const[tasksDone, setTasksDone] = useState(0);
+  const[todosDone, setTodosDone] = useState(0);
 
   const[todos, setTodos] = useState<ITodo[]>([]);
   const[newTodoText, setNewTodoText] = useState("");
@@ -37,6 +37,7 @@ export function Todos() {
   }
 
   function handleToogleDone(id: String):void{
+    let todosDone = 0;
     const toggledTodos = todos.map((todo) => {
       if(todo.id === id){
         todo = {
@@ -44,9 +45,12 @@ export function Todos() {
           done: !todo.done
         };
       }
+      if(todo.done)
+        todosDone = todosDone + 1;
       return todo;
     })
     setTodos(toggledTodos);
+    setTodosDone(todosDone);
   }
   
   
@@ -68,7 +72,7 @@ export function Todos() {
               <span className={styles.counterNumber}>{todos.length === 0 ? "0" : todos.length}</span>
             </p>
             <p>Concluidas
-              <span className={styles.counterNumber}>{`${tasksDone} de ${todos.length}`}</span>
+              <span className={styles.counterNumber}>{`${todosDone} de ${todos.length}`}</span>
             </p>
        </div> 
 
@@ -85,7 +89,11 @@ export function Todos() {
         {todos.map((todo)=>{
           return(
             // Refactor: Add key to the component
-            <AddTodo todo={todo} onDeleteTodo={handleDeleteTodo} onToggleDone={handleToogleDone}/>
+            <AddTodo 
+              todo={todo} 
+              onDeleteTodo={handleDeleteTodo} 
+              onToggleDone={handleToogleDone}
+              />
           )
         })}
       </div>
